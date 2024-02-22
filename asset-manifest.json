@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-project_learn-lingo/static/css/main.7acaea2f.css",
+    "main.js": "/react-project_learn-lingo/static/js/main.8034e02c.js",
+    "index.html": "/react-project_learn-lingo/index.html",
+    "main.7acaea2f.css.map": "/react-project_learn-lingo/static/css/main.7acaea2f.css.map",
+    "main.8034e02c.js.map": "/react-project_learn-lingo/static/js/main.8034e02c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.8034e02c.js"
+  ]
+}
