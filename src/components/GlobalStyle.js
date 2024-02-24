@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
  html {
     box-sizing: border-box;
@@ -20,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -42,30 +41,32 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
-  }
+      }
 
   button {
     font-family: inherit;
     padding: 0;
     margin: 0;
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar {
     width: 5px;
+    right: 40px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #D7E3FF;
+    background: #f1f1f1;
     width: 3px;
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #9EBBFF;
+    background: #888;
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #407BFF;
+    background: #555;
   }
 `;
