@@ -1,13 +1,22 @@
 {
   "files": {
-    "main.css": "/react-project_learn-lingo/static/css/main.7acaea2f.css",
-    "main.js": "/react-project_learn-lingo/static/js/main.8034e02c.js",
+    "main.css": "/react-project_learn-lingo/static/css/main.8586fc0c.css",
+    "main.js": "/react-project_learn-lingo/static/js/main.abedf239.js",
+    "static/js/283.cccf3eb2.chunk.js": "/react-project_learn-lingo/static/js/283.cccf3eb2.chunk.js",
+    "static/js/869.cea9e34f.chunk.js": "/react-project_learn-lingo/static/js/869.cea9e34f.chunk.js",
+    "static/js/942.e953ed58.chunk.js": "/react-project_learn-lingo/static/js/942.e953ed58.chunk.js",
+    "static/media/comp.jpg": "/react-project_learn-lingo/static/media/comp.01415a35f16375dfa22e.jpg",
+    "static/media/jane.png": "/react-project_learn-lingo/static/media/jane.43ffa04903c6110763ae.png",
+    "static/media/sprite.svg": "/react-project_learn-lingo/static/media/sprite.c2c13f5ba1471f5da95e0b1e5e5335b5.svg",
     "index.html": "/react-project_learn-lingo/index.html",
-    "main.7acaea2f.css.map": "/react-project_learn-lingo/static/css/main.7acaea2f.css.map",
-    "main.8034e02c.js.map": "/react-project_learn-lingo/static/js/main.8034e02c.js.map"
+    "main.8586fc0c.css.map": "/react-project_learn-lingo/static/css/main.8586fc0c.css.map",
+    "main.abedf239.js.map": "/react-project_learn-lingo/static/js/main.abedf239.js.map",
+    "283.cccf3eb2.chunk.js.map": "/react-project_learn-lingo/static/js/283.cccf3eb2.chunk.js.map",
+    "869.cea9e34f.chunk.js.map": "/react-project_learn-lingo/static/js/869.cea9e34f.chunk.js.map",
+    "942.e953ed58.chunk.js.map": "/react-project_learn-lingo/static/js/942.e953ed58.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.8034e02c.js"
+    "static/css/main.8586fc0c.css",
+    "static/js/main.abedf239.js"
   ]
 }
