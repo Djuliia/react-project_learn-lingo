@@ -1,3 +1,4 @@
+import { getDatabase, ref, get } from 'firebase/database';
 import sprite from '../../images/sprite.svg#book-open';
 import teacherAvatar from '../../images/jane.png';
 import reviewerAvatar from '../../images/frank.png';
@@ -10,24 +11,27 @@ export const TeacherCard = () => {
 
   const openBookTeacherModal = () => {
     setBookTeacherModalisOpen(true);
+    document.body.style.overflow = 'hidden';
   };
   const closeBookTeacherModal = () => {
     setBookTeacherModalisOpen(false);
+    document.body.style.overflow = 'auto';
   };
 
   useEffect(() => {
-    if (bookTeacherModalisOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.body.style.overflow = 'auto';
+    const fetchData = async () => {
+      const db = getDatabase();
+      const dataRef = ref(db);
+      const snapshot = await get(dataRef);
+      const data = snapshot.val();
+      console.log(data);
     };
-  }, [bookTeacherModalisOpen]);
+
+    fetchData();
+  }, []);
+
   return (
-    <li>
+    <div>
       <svg width={26} height={26}>
         <use href="../../images/sprite.svg#normalheart" />
       </svg>
@@ -42,8 +46,8 @@ export const TeacherCard = () => {
             <use href={`${sprite}#book-open`} />
           </svg>
           Lessons online
-          <li>Lessons done: 1098</li>
         </li>
+        <li>Lessons done: 1098</li>
         <li>
           <svg>
             <use href={`${sprite}#star`} width="16" height="16" />
@@ -79,7 +83,7 @@ export const TeacherCard = () => {
       </p>
       <ul>
         <li>
-          <img src={reviewerAvatar} alt="avatar"></img>
+          <img src={reviewerAvatar} alt="avatar" />
           <p>Frank</p>
           <svg>
             <use href={`${sprite}#star`} width="16" height="16" />
@@ -103,30 +107,6 @@ export const TeacherCard = () => {
         <BookTeacher />
       </PopUp>
       <button>Read more</button>
-      <p>
-        Jane is an experienced and dedicated language teacher specializing in
-        German and French. She holds a Bachelor's degree in German Studies and a
-        Master's degree in French Literature. Her passion for languages and
-        teaching has driven her to become a highly proficient and knowledgeable
-        instructor. With over 10 years of teaching experience, Jane has helped
-        numerous students of various backgrounds and proficiency levels achieve
-        their language learning goals. She is skilled at adapting her teaching
-        methods to suit the needs and learning styles of her students, ensuring
-        that they feel supported and motivated throughout their language
-        journey.
-      </p>
-      <p>
-        Jane is an experienced and dedicated language teacher specializing in
-        German and French. She holds a Bachelor's degree in German Studies and a
-        Master's degree in French Literature. Her passion for languages and
-        teaching has driven her to become a highly proficient and knowledgeable
-        instructor. With over 10 years of teaching experience, Jane has helped
-        numerous students of various backgrounds and proficiency levels achieve
-        their language learning goals. She is skilled at adapting her teaching
-        methods to suit the needs and learning styles of her students, ensuring
-        that they feel supported and motivated throughout their language
-        journey.
-      </p>
-    </li>
+    </div>
   );
 };

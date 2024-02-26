@@ -26,7 +26,54 @@ export const RadioBox = styled.div`
   gap: ${theme.spacing(4)};
 `;
 
-export const RadioField = styled(Field)``;
+export const RadioField = styled(Field)`
+  position: relative;
+  height: 22px;
+  width: 22px;
+  margin-right: ${theme.spacing(4)};
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: ${theme.colors.bg};
+    border: 2px solid rgba(18, 20, 23, 0.1);
+    transform: translate(-50%, -50%);
+  }
+
+  &:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid ${theme.colors.accent};
+    transform: translate(-50%, -50%);
+  }
+
+  &:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: ${theme.colors.accent};
+    transform: translate(-50%, -50%);
+  }
+`;
 
 export const StyledField = styled(Field)`
   padding: 16px 18px;

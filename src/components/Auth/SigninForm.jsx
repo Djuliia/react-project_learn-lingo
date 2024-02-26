@@ -2,25 +2,34 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import sprite from '../../images/sprite.svg';
 import { useState } from 'react';
+
 import {
   Button,
   EyeBtn,
-  FieldWrap,
+  Label,
   StyledField,
   Text,
   Title,
   Wrapper,
-} from 'components/SignupForm/SignupForm.styled';
+} from './Form.styled';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from 'components/firebase';
 
-export const SigninForm = () => {
+export const SigninForm = ({ closeModal }) => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const handleSubmit = ({ email, password }, { resetForm }) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then(user => {
+        console.log(user);
+        resetForm();
+        closeModal();
+      })
+      .catch(e => console.log(e));
+  };
 
   const handleTogglePassword = () => {
     setShowPassword(prevState => !prevState);
-  };
-
-  const handleSubmit = values => {
-    console.log(values);
   };
 
   return (
@@ -46,13 +55,13 @@ export const SigninForm = () => {
         onSubmit={handleSubmit}
       >
         <Form>
-          <div>
+          <label aria-label="signin email">
             <StyledField type="email" name="email" placeholder="Email" />
 
             <ErrorMessage name="email" component="div" />
-          </div>
+          </label>
           <div>
-            <FieldWrap>
+            <Label>
               <StyledField
                 type={showPassword ? 'text' : 'password'}
                 name="password"
@@ -63,7 +72,7 @@ export const SigninForm = () => {
                   {showPassword ? null : <use href={`${sprite}#eye-off`} />}
                 </svg>
               </EyeBtn>
-            </FieldWrap>
+            </Label>
             <ErrorMessage name="password" component="div" />
           </div>
           <Button type="submit">Log In</Button>

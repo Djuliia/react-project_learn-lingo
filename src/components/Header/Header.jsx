@@ -12,17 +12,31 @@ import {
 } from './Header.styled';
 import { useState } from 'react';
 import { PopUp } from 'components/Modal/Modal';
-import { SigninForm } from 'components/SinginForm/SigninForm';
-import { SignupForm } from 'components/SignupForm/SignupForm';
+import { SigninForm } from 'components/Auth/SigninForm';
+import { SignupForm } from 'components/Auth/SignupForm';
 
 export const Header = () => {
   const [signinModalIsOpen, setSigninModalIsOpen] = useState(false);
-  const openSigninModal = () => setSigninModalIsOpen(true);
-  const closeSigninModal = () => setSigninModalIsOpen(false);
-
   const [signupModalIsOpen, setSignupModalIsOpen] = useState(false);
-  const openSignupModal = () => setSignupModalIsOpen(true);
-  const closeSignupModal = () => setSignupModalIsOpen(false);
+
+  const openSigninModal = () => {
+    setSigninModalIsOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+  const closeSigninModal = () => {
+    setSigninModalIsOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const openSignupModal = () => {
+    setSignupModalIsOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeSignupModal = () => {
+    setSignupModalIsOpen(false);
+    document.body.style.overflow = 'auto';
+  };
 
   return (
     <StyledHeader>
@@ -59,11 +73,11 @@ export const Header = () => {
           </SignupBtn>
 
           <PopUp isOpen={signinModalIsOpen} onRequestClose={closeSigninModal}>
-            <SigninForm />
+            <SigninForm closeModal={closeSigninModal} />
           </PopUp>
 
           <PopUp isOpen={signupModalIsOpen} onRequestClose={closeSignupModal}>
-            <SignupForm />
+            <SignupForm closeModal={closeSigninModal} />
           </PopUp>
         </SigninSignupWrap>
       </Nav>

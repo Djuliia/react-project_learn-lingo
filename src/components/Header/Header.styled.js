@@ -1,5 +1,5 @@
 import { theme } from 'components/theme';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
@@ -71,12 +71,12 @@ export const SignupBtn = styled.button`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   transition: ${theme.transition};
 
   &:hover,
   &:focus,
-  &:active {
+  &.active {
     color: ${theme.colors.accent};
   }
 `;

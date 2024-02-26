@@ -73,6 +73,6 @@ export const EyeBtn = styled.button`
   }
 `;
 
-export const FieldWrap = styled.div`
+export const Label = styled.label`
   position: relative;
 `;

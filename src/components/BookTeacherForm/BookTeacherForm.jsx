@@ -1,4 +1,4 @@
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {
   Button,
@@ -46,19 +46,34 @@ export const BookTeacherForm = () => {
               <label htmlFor="career">Career and business</label>
             </RadioBox>
             <RadioBox>
-              <Field type="radio" id="lesson" name="reason" value="lesson" />
+              <RadioField
+                type="radio"
+                id="lesson"
+                name="reason"
+                value="lesson"
+              />
               <label htmlFor="lesson">Lesson for kids</label>
             </RadioBox>
             <RadioBox>
-              <Field type="radio" id="abroad" name="reason" value="abroad" />
+              <RadioField
+                type="radio"
+                id="abroad"
+                name="reason"
+                value="abroad"
+              />
               <label htmlFor="abroad">Living abroad</label>
             </RadioBox>
             <RadioBox>
-              <Field type="radio" id="exams" name="reason" value="exams" />
+              <RadioField type="radio" id="exams" name="reason" value="exams" />
               <label htmlFor="exams">Exams and coursework</label>
             </RadioBox>
             <RadioBox>
-              <Field type="radio" id="culture" name="reason" value="culture" />
+              <RadioField
+                type="radio"
+                id="culture"
+                name="reason"
+                value="culture"
+              />
               <label htmlFor="culture">Culture, travel or hobby</label>
             </RadioBox>
           </RadioWrap>

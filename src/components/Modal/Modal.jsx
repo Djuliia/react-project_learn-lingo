@@ -14,6 +14,7 @@ const customStyles = {
     zIndex: '1300',
     borderRadius: '30px',
     padding: '64px',
+    maxHeight: '80vh',
     overflowY: 'auto',
   },
   overlay: {
@@ -31,7 +32,7 @@ export const PopUp = ({ isOpen, onRequestClose, children }) => {
           <use href={`${sprite}#x`} />
         </svg>
       </StyledBtn>
-      <div style={{ maxHeight: '90vh', overflowY: 'auto' }}>{children}</div>
+      <div>{children}</div>
     </Modal>,
     modalRoot
   );
