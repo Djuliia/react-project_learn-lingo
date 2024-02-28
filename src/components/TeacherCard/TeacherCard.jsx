@@ -9,6 +9,7 @@ import {
   AvatarWrap,
   BageItem,
   BageList,
+  BtnBook,
   BtnHeart,
   BtnMore,
   CardHeading,
@@ -16,6 +17,10 @@ import {
   HeadingList,
   LangSpan,
   MainBlock,
+  RatingWrap,
+  ReviewerAvatar,
+  ReviewerInfo,
+  ReviewerItem,
   ReviewerList,
   SpanSpace,
   Underline,
@@ -141,12 +146,18 @@ export const TeacherCard = ({ card }) => {
                     index
                   ) => (
                     <li key={index}>
-                      <img src={reviewer_avatar} alt="avatar" />
-                      <p> {reviewer_name}</p>
-                      <svg>
-                        <use href={`${sprite}#star`} width="16" height="16" />
-                      </svg>
-                      {reviewer_rating}
+                      <ReviewerInfo>
+                        <ReviewerAvatar src={reviewer_avatar} alt="avatar" />
+                        <div>
+                          <span> {reviewer_name}</span>
+                          <RatingWrap>
+                            <svg width="16" height="16">
+                              <use href={`${sprite}#star`} />
+                            </svg>
+                            {reviewer_rating}
+                          </RatingWrap>
+                        </div>
+                      </ReviewerInfo>
                       <p>{comment}</p>
                     </li>
                   )
@@ -157,7 +168,9 @@ export const TeacherCard = ({ card }) => {
                   <BageItem key={level}>{level}</BageItem>
                 ))}
               </BageList>
-              <button onClick={openBookTeacherModal}>Book trial lesson</button>
+              <BtnBook onClick={openBookTeacherModal}>
+                Book trial lesson
+              </BtnBook>
               <PopUp
                 isOpen={bookTeacherModalisOpen}
                 onRequestClose={closeBookTeacherModal}

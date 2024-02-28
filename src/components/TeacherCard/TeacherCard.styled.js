@@ -129,116 +129,51 @@ export const BageItem = styled.li`
   line-height: 1.14;
 `;
 
-export const ReviewerList = styled.ul``;
+export const ReviewerList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing(16)};
+  margin-top: ${theme.spacing(16)};
+`;
 
-export const ReviewerItem = styled.li``;
+export const ReviewerInfo = styled.div`
+  display: flex;
+  gap: ${theme.spacing(6)};
+  margin-bottom: ${theme.spacing(8)};
+  font-weight: 500;
+  line-height: 24px;
+  span {
+    color: ${theme.colors.secondaryText};
+  }
+`;
 
-// export const MainList = styled.ul`
-//   margin-block-end: ${theme.spacing(8)};
+export const RatingWrap = styled.div`
+  display: flex;
+  gap: ${theme.spacing(4)};
+  font-size: 14px;
+  line-height: 1.29;
+`;
 
-//   display: flex;
-//   flex-direction: column;
-//   gap: ${theme.spacing(4)};
-//   font-weight: 500;
-//   line-height: 1.5;
-// `;
+export const ReviewerAvatar = styled.img`
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+`;
 
-// export const TitleSpan = styled.span`
-//   color: ${theme.colors.accent};
-// `;
-
-// export const UnderlineSpan = styled.span`
-//   text-decoration: underline;
-// `;
-
-// export const BtnMore = styled.button`
-//   margin-block-end: ${theme.spacing(16)};
-//   border: none;
-//   background-color: transparent;
-//   font-weight: 500;
-//   text-decoration: underline;
-
-//   &.active {
-//     display: none;
-//   }
-// `;
-
-// export const LevelList = styled.ul`
-//   display: flex;
-//   gap: ${theme.spacing(4)};
-
-//   li {
-//     padding: ${theme.spacing(4)} ${theme.spacing(6)};
-//     border: 1px solid rgba(18, 20, 23, 0.2);
-//     border-radius: ${theme.radii.xl};
-
-//     color: rgb(18, 20, 23);
-//     font-size: 14px;
-//     font-weight: 500;
-//     line-height: 1.142;
-
-//     &:first-child {
-//       background-color: ${theme.colors.primary};
-//       border: 1px solid transparent;
-//     }
-//   }
-// `;
-
-// export const OpenData = styled.div``;
-
-// export const HiddenData = styled.div``;
-
-// export const FlexContainer = styled.div`
-//   margin-block: ${theme.spacing(17.5)} ${theme.spacing(8)};
-
-//   display: flex;
-//   gap: ${theme.spacing(6)};
-// `;
-
-// export const RevAvatar = styled.img`
-//   border-radius: 50%;
-// `;
-
-// export const FlexWrapper = styled.div`
-//   gap: ${theme.spacing(1.5)};
-
-//   h3 {
-//     color: ${theme.colors.accent};
-//     font-weight: 500;
-//     line-height: 1.5;
-//   }
-
-//   p {
-//     font-weight: 500;
-//   }
-
-//   svg {
-//     margin-inline-end: ${theme.spacing(6)};
-//     transform: translateY(2px);
-//   }
-// `;
-
-// export const ReviewerComment = styled.p`
-//   margin-block-end: ${theme.spacing(16)};
-
-//   font-weight: 500;
-//   line-height: 1.5;
-// `;
-
-// export const BtnLesson = styled.button`
-//   margin-block-start: ${theme.spacing(16)};
-//   padding: ${theme.spacing(8)} ${theme.spacing(24)};
-
-//   border-radius: ${theme.radii.xs};
-//   border: none;
-//   background: ${theme.colors.primary};
-//   font-size: 18px;
-//   font-weight: 700;
-//   line-height: 1.555;
-
-//   transition: background-color ${theme.transition};
-
-//   &:hover {
-//     background-color: ${theme.colors.secondary};
-//   }
-// `;
+export const BtnBook = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 48px 16px 48px;
+  margin-top: ${theme.spacing(16)};
+  background-color: ${theme.colors.accent};
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.56;
+  transition: background-color ${theme.transition};
+  &:hover {
+    background-color: ${theme.colors.lightAccent};
+  }
+`;
