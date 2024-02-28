@@ -20,7 +20,6 @@ import {
   RatingWrap,
   ReviewerAvatar,
   ReviewerInfo,
-  ReviewerItem,
   ReviewerList,
   SpanSpace,
   Underline,
