@@ -63,12 +63,7 @@ export const Header = () => {
             </svg>
             Log in
           </SigninBtn>
-          <SignupBtn
-            type="button"
-            isOpen={signupModalIsOpen}
-            onRequestClose={closeSignupModal}
-            onClick={openSignupModal}
-          >
+          <SignupBtn type="button" onClick={openSignupModal}>
             Registration
           </SignupBtn>
 

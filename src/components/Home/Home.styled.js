@@ -1,4 +1,4 @@
-import { theme } from 'components/theme';
+import { theme } from 'theme';
 import { Link } from 'react-router-dom/dist';
 import styled from 'styled-components';
 
@@ -52,6 +52,12 @@ export const Button = styled(Link)`
   font-size: 18px;
   font-weight: 700;
   line-height: 1.56;
+  transition: ${theme.transition};
+
+  &:hover,
+  &:focus {
+    background-color: ${theme.colors.lightAccent};
+  }
 `;
 
 export const List = styled.ul`

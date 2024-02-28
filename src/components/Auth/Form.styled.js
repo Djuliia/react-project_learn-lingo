@@ -1,5 +1,5 @@
-import { theme } from 'components/theme';
-import { Field } from 'formik';
+import { theme } from 'theme';
+import { ErrorMessage, Field } from 'formik';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -59,7 +59,7 @@ export const EyeBtn = styled.button`
   position: absolute;
   background-color: transparent;
   border: none;
-  top: 17px;
+  top: 0px;
   right: 17px;
 
   svg {
@@ -75,4 +75,9 @@ export const EyeBtn = styled.button`
 
 export const Label = styled.label`
   position: relative;
+`;
+
+export const ErrorMsg = styled(ErrorMessage)`
+  color: red;
+  font-size: 12px;
 `;

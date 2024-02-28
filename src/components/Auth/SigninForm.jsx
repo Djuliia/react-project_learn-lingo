@@ -1,10 +1,13 @@
-import { Formik, Form, ErrorMessage } from 'formik';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from 'components/firebase';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import sprite from '../../images/sprite.svg';
 import { useState } from 'react';
 
 import {
   Button,
+  ErrorMsg,
   EyeBtn,
   Label,
   StyledField,
@@ -12,8 +15,6 @@ import {
   Title,
   Wrapper,
 } from './Form.styled';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from 'components/firebase';
 
 export const SigninForm = ({ closeModal }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -58,7 +59,7 @@ export const SigninForm = ({ closeModal }) => {
           <label aria-label="signin email">
             <StyledField type="email" name="email" placeholder="Email" />
 
-            <ErrorMessage name="email" component="div" />
+            <ErrorMsg name="email" component="div" />
           </label>
           <div>
             <Label>
@@ -73,7 +74,7 @@ export const SigninForm = ({ closeModal }) => {
                 </svg>
               </EyeBtn>
             </Label>
-            <ErrorMessage name="password" component="div" />
+            <ErrorMsg name="password" component="div" />
           </div>
           <Button type="submit">Log In</Button>
         </Form>

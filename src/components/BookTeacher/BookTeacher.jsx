@@ -1,5 +1,5 @@
 import React from 'react';
-import teacherAvatar from '../../images/jane.png';
+// import teacherAvatar from '../../images/jane.png';
 import { BookTeacherForm } from 'components/BookTeacherForm/BookTeacherForm';
 import { AvatarWrap, Name, Span, Title, Wrapper } from './BookTeacher.styled';
 
@@ -13,7 +13,7 @@ export const BookTeacher = () => {
         your learning goals, and tailor the lesson to your specific needs.
       </p>
       <AvatarWrap>
-        <img src={teacherAvatar} alt="avatar" />
+        <img src="{teacherAvatar}" alt="avatar" />
         <div>
           <Span>Your teacher</Span>
           <Name>Jane Smith</Name>

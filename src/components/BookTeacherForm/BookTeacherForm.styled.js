@@ -1,4 +1,4 @@
-import { theme } from 'components/theme';
+import { theme } from 'theme';
 import { ErrorMessage, Field, Form } from 'formik';
 import styled from 'styled-components';
 
