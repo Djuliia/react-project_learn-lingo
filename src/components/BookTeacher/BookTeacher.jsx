@@ -2,8 +2,9 @@ import React from 'react';
 // import teacherAvatar from '../../images/jane.png';
 import { BookTeacherForm } from 'components/BookTeacherForm/BookTeacherForm';
 import { AvatarWrap, Name, Span, Title, Wrapper } from './BookTeacher.styled';
+import { ReviewerAvatar } from 'components/TeacherCard/TeacherCard.styled';
 
-export const BookTeacher = () => {
+export const BookTeacher = ({ name, surname, avatar }) => {
   return (
     <Wrapper>
       <Title>Book trial lesson</Title>
@@ -13,10 +14,12 @@ export const BookTeacher = () => {
         your learning goals, and tailor the lesson to your specific needs.
       </p>
       <AvatarWrap>
-        <img src="{teacherAvatar}" alt="avatar" />
+        <ReviewerAvatar src={avatar} alt="avatar" />
         <div>
           <Span>Your teacher</Span>
-          <Name>Jane Smith</Name>
+          <Name>
+            {name} {surname}
+          </Name>
         </div>
       </AvatarWrap>
       <BookTeacherForm />

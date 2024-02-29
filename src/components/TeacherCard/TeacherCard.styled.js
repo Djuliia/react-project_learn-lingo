@@ -46,6 +46,7 @@ export const HeadingList = styled.div`
 `;
 
 export const LangSpan = styled.span`
+  margin-bottom: ${theme.spacing(4)};
   font-weight: 500;
   line-height: 1.5;
   color: ${theme.colors.secondaryText};
@@ -57,7 +58,9 @@ export const BtnHeart = styled.button`
   border: none;
   width: 26px;
   height: 26px;
+
   svg {
+    transition: stroke ${theme.transition};
     stroke: ${theme.colors.mainText};
   }
 
@@ -109,7 +112,7 @@ export const BtnMore = styled.button`
   line-height: 1.5;
   font-size: 16px;
   text-decoration: underline;
-
+  transition: color ${theme.transition};
   &:hover {
     color: ${theme.colors.accent};
   }

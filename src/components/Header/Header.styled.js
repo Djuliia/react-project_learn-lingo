@@ -38,8 +38,7 @@ export const SigninBtn = styled.button`
   border: none;
   transition: color ${theme.transition};
 
-  &:hover,
-  &:focus {
+  &:hover{
     color: ${theme.colors.accent};
   }
 `;
@@ -65,8 +64,7 @@ export const SignupBtn = styled.button`
   border-radius: 12px;
   border: none;
   transition: ${theme.transition};
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${theme.colors.accent};
   }
 `;
@@ -75,7 +73,6 @@ export const StyledLink = styled(NavLink)`
   transition: ${theme.transition};
 
   &:hover,
-  &:focus,
   &.active {
     color: ${theme.colors.accent};
   }

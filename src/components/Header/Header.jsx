@@ -54,6 +54,9 @@ export const Header = () => {
           <li>
             <StyledLink to="/teachers">Teachers</StyledLink>
           </li>
+          <li>
+            <StyledLink to="/favorites">Favorites</StyledLink>
+          </li>
         </List>
 
         <SigninSignupWrap>

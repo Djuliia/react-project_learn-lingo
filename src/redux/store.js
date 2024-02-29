@@ -10,6 +10,8 @@ import {
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { teachersReducer } from './teachersSlice';
+import { favoriteReducer } from './favoritesSlice';
+import { filterReducer } from './filterSlice';
 
 const persistConfig = {
   key: 'root',
@@ -27,11 +29,10 @@ const ignoredPersistenceActions = [
 
 export const store = configureStore({
   reducer: {
-    teachers: persistReducer(persistConfig, teachersReducer),
-    // teachers: teachersReducer,
+    teachers: teachersReducer,
     // auth,
-    // filter,
-    // favorites: persistReducer(persistConfig, favoriteReducer),
+    filter: filterReducer,
+    favorites: persistReducer(persistConfig, favoriteReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

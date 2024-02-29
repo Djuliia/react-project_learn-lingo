@@ -10,7 +10,6 @@ export const fetchData = createAsyncThunk(
       const snapshot = await get(dataRef);
       const data = snapshot.val();
       if (data) {
-        console.log(Object.keys(data).map(key => ({ id: key, ...data[key] })));
         return Object.keys(data).map(key => ({ id: key, ...data[key] }));
       }
     } catch (error) {

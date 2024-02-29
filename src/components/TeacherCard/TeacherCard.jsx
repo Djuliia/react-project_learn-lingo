@@ -24,12 +24,18 @@ import {
   SpanSpace,
   Underline,
 } from './TeacherCard.styled';
+import { addFavorite, removeFavorite } from '../../redux/favoritesSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/selectors';
 
 export const TeacherCard = ({ card }) => {
   const [bookTeacherModalisOpen, setBookTeacherModalisOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
   const [isOpenForRead, setIsOpenForRead] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.some(favorite => favorite.id === card.id);
+
+  const dispatch = useDispatch();
 
   const openBookTeacherModal = () => {
     setBookTeacherModalisOpen(true);
@@ -40,8 +46,12 @@ export const TeacherCard = ({ card }) => {
     document.body.style.overflow = 'auto';
   };
 
-  const toggleFavorite = () => {
-    isFavorite ? setIsFavorite(false) : setIsFavorite(true);
+  const handleToggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(card.id));
+    } else {
+      dispatch(addFavorite(card));
+    }
   };
 
   const handleReadMore = () => {
@@ -67,7 +77,7 @@ export const TeacherCard = ({ card }) => {
   return (
     <CardWrap>
       <AvatarWrap>
-        <AvatarStatus width={8} height={8}>
+        <AvatarStatus width={12} height={12}>
           <use href={`${sprite}#ellipse`} />
         </AvatarStatus>
         <Avatar src={avatar_url} alt="avatar" />
@@ -90,7 +100,7 @@ export const TeacherCard = ({ card }) => {
             <p>
               Price / 1 hour:&nbsp; <AccentText>{price_per_hour}</AccentText>
             </p>
-            <BtnHeart onClick={toggleFavorite}>
+            <BtnHeart onClick={handleToggleFavorite}>
               {isFavorite ? (
                 <svg width={26} height={26}>
                   <use href={`${sprite}#fullheart`} />
@@ -174,7 +184,11 @@ export const TeacherCard = ({ card }) => {
                 isOpen={bookTeacherModalisOpen}
                 onRequestClose={closeBookTeacherModal}
               >
-                <BookTeacher />
+                <BookTeacher
+                  name={name}
+                  surname={surname}
+                  avatar={avatar_url}
+                />
               </PopUp>
             </div>
           )}

@@ -54,8 +54,7 @@ export const Button = styled(Link)`
   line-height: 1.56;
   transition: ${theme.transition};
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${theme.colors.lightAccent};
   }
 `;

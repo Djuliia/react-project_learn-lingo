@@ -49,8 +49,7 @@ export const Button = styled.button`
   font-weight: 700;
   line-height: 1.56;
   transition: background-color ${theme.transition};
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${theme.colors.lightAccent};
   }
 `;
@@ -67,8 +66,7 @@ export const EyeBtn = styled.button`
     transition: ${theme.transition};
   }
 
-  &:hover > svg,
-  &:focus > svg {
+  &:hover > svg {
     stroke: ${theme.colors.accent};
   }
 `;

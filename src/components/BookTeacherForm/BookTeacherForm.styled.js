@@ -113,8 +113,7 @@ export const Button = styled.button`
   border: none;
   background-color: ${theme.colors.accent};
   transition: ${theme.transition};
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${theme.colors.lightAccent};
   }
 `;

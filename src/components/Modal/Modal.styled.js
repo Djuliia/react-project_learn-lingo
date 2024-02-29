@@ -13,8 +13,7 @@ export const StyledBtn = styled.button`
     transition: stroke ${theme.transition};
   }
 
-  &:hover > svg,
-  &:focus > svg {
+  &:hover > svg {
     stroke: ${theme.colors.accent};
   }
 `;

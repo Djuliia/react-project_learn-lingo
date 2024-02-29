@@ -1,5 +1,6 @@
-import { Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useQueryParams } from 'hooks/useQueryParams';
+import { Label, StyledField, StyledForm } from './Filter.styled';
 
 export const Filter = () => {
   const { language, changeLanguage, level, changeLevel, price, changePrice } =
@@ -14,10 +15,11 @@ export const Filter = () => {
       }}
     >
       {() => (
-        <Form>
-          <label>
+        <StyledForm>
+          <Label>
             Languages
-            <Field
+            <StyledField
+              className="language"
               name="language"
               as="select"
               value={language}
@@ -30,11 +32,12 @@ export const Filter = () => {
               <option value="german">German</option>
               <option value="italian">Italian</option>
               <option value="korean">Korean</option>
-            </Field>
-          </label>
-          <label>
+            </StyledField>
+          </Label>
+          <Label>
             Level of knowledge
-            <Field
+            <StyledField
+              className="level"
               name="level"
               as="select"
               value={level}
@@ -47,11 +50,12 @@ export const Filter = () => {
               <option value="upper-intermediate">B2 Upper-Intermediate</option>
               <option value="advanced">C1 Advanced</option>
               <option value="proficient">C2 Proficient</option>
-            </Field>
-          </label>
-          <label>
+            </StyledField>
+          </Label>
+          <Label>
             Price
-            <Field
+            <StyledField
+              className="price"
               name="price"
               as="select"
               value={price}
@@ -64,9 +68,9 @@ export const Filter = () => {
               <option value="27">27$</option>
               <option value="32">32$</option>
               <option value="28">28$</option>
-            </Field>
-          </label>
-        </Form>
+            </StyledField>
+          </Label>
+        </StyledForm>
       )}
     </Formik>
   );

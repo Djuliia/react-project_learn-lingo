@@ -3,6 +3,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   max-width: 472px;
+
+  p {
+    line-height: 1.38;
+    color: ${theme.colors.tertiaryText};
+    margin-bottom: ${theme.spacing(10)};
+  }
 `;
 
 export const Title = styled.div`
