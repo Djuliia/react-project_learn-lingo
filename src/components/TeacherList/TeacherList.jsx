@@ -2,23 +2,25 @@ import { useEffect } from 'react';
 import { TeacherCard } from 'components/TeacherCard/TeacherCard';
 import { fetchData } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectTeachers } from '../../redux/selectors.js';
+import { selectFilteredTeachers } from '../../redux/selectors.js';
 
-export const TeacherList = () => {
+export const TeacherList = ({ visibleCards }) => {
   const dispatch = useDispatch();
-  const teachers = useSelector(selectTeachers);
+  const filteredTeachers = useSelector(selectFilteredTeachers);
 
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
 
   return (
-    <ul>
-      {teachers.map(teacher => (
-        <li key={teacher.id}>
-          <TeacherCard card={teacher} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {filteredTeachers.slice(0, visibleCards).map(teacher => (
+          <li key={teacher.id}>
+            <TeacherCard card={teacher} />
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };

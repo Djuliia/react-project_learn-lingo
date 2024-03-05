@@ -3,7 +3,8 @@ import { ErrorMessage, Field } from 'formik';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 438px;
+  max-width: 438px;
+  min-width: 320;
 `;
 
 export const Title = styled.div`
@@ -20,12 +21,13 @@ export const Text = styled.p`
 `;
 
 export const StyledField = styled(Field)`
-  width: 400px;
+  width: 100%;
   margin-bottom: ${theme.spacing(9)};
   padding: ${theme.spacing(9)};
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 12px;
   outline: none;
+  box-sizing: border-box;
   &::placeholder {
     font-size: 16px;
     opacity: 1;
@@ -37,7 +39,7 @@ export const StyledField = styled(Field)`
 
 export const Button = styled.button`
   margin-top: ${theme.spacing(20)};
-  width: 438px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,12 +64,12 @@ export const EyeBtn = styled.button`
   right: 17px;
 
   svg {
-    stroke: #121417;
+    fill: #121417;
     transition: ${theme.transition};
   }
 
   &:hover > svg {
-    stroke: ${theme.colors.accent};
+    fill: ${theme.colors.accent};
   }
 `;
 

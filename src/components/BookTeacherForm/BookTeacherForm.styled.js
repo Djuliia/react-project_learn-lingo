@@ -77,7 +77,6 @@ export const RadioField = styled(Field)`
 
 export const StyledField = styled(Field)`
   padding: 16px 18px;
-
   border: 1px solid rgba(18, 20, 23, 0.1);
   border-radius: 12px;
   outline: none;
@@ -105,7 +104,8 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 215px;
+  padding: 16px;
+  max-width: 472px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.56;

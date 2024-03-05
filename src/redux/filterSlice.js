@@ -3,10 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 const filterSlice = createSlice({
   name: 'filter',
   initialState: {
-    filteredTeachers: [],
+    filters: {
+      language: 'all',
+      level: 'all',
+      price: 'all',
+    },
   },
   reducers: {
-    setFilter: (state, { payload }) => (state.filteredTeachers = payload),
+    setFilter: (state, action) => {
+      state.filters = action.payload;
+    },
   },
 });
 

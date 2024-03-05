@@ -26,7 +26,12 @@ import {
 } from './TeacherCard.styled';
 import { addFavorite, removeFavorite } from '../../redux/favoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFavorites } from '../../redux/selectors';
+import {
+  selectFavorites,
+  selectFilter,
+  selectUser,
+} from '../../redux/selectors';
+import toast from 'react-hot-toast';
 
 export const TeacherCard = ({ card }) => {
   const [bookTeacherModalisOpen, setBookTeacherModalisOpen] = useState(false);
@@ -34,6 +39,8 @@ export const TeacherCard = ({ card }) => {
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
   const favorites = useSelector(selectFavorites);
   const isFavorite = favorites.some(favorite => favorite.id === card.id);
+  const filteredLevel = useSelector(selectFilter).level;
+  const authUser = useSelector(selectUser);
 
   const dispatch = useDispatch();
 
@@ -47,6 +54,10 @@ export const TeacherCard = ({ card }) => {
   };
 
   const handleToggleFavorite = () => {
+    if (!authUser) {
+      toast.error('For authorized users only!');
+      return;
+    }
     if (isFavorite) {
       dispatch(removeFavorite(card.id));
     } else {
@@ -134,7 +145,9 @@ export const TeacherCard = ({ card }) => {
               <BtnMore onClick={handleReadMore}>Read more</BtnMore>
               <BageList>
                 {levels.map(level => (
-                  <BageItem key={level}>{level}</BageItem>
+                  <BageItem key={level} $active={level === filteredLevel}>
+                    {level}
+                  </BageItem>
                 ))}
               </BageList>
             </>

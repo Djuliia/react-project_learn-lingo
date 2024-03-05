@@ -14,18 +14,19 @@ import {
   Wrapper,
 } from './Form.styled';
 import sprite from '../../images/sprite.svg';
+import toast from 'react-hot-toast';
 
 export const SignupForm = ({ closeModal }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = ({ name, email, password }, { resetForm }) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(user => {
-        console.log(user);
+    createUserWithEmailAndPassword(auth, name, email, password)
+      .then(() => {
+        toast.success('You are registered!');
         resetForm();
         closeModal();
       })
-      .catch(e => console.log(e));
+      .catch(e => toast.error(`Something went wrong, ${e}`));
   };
 
   const handleTogglePassword = () => {
@@ -74,7 +75,11 @@ export const SignupForm = ({ closeModal }) => {
 
             <EyeBtn type="button" onClick={() => handleTogglePassword()}>
               <svg width="20" height="20">
-                {showPassword ? null : <use href={`${sprite}#eye-off`} />}
+                {showPassword ? (
+                  <use href={`${sprite}#eye`} />
+                ) : (
+                  <use href={`${sprite}#eye-off`} />
+                )}
               </svg>
             </EyeBtn>
           </Label>

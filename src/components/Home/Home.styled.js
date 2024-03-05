@@ -4,20 +4,32 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: ${theme.spacing(12)};
+  width: 100%;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   gap: ${theme.spacing(12)};
+
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 export const BoxWrapper = styled.div`
   padding: 98px 108px 98px 64px;
   border-radius: 30px;
   background-color: #f8f8f8;
+
+  @media screen and (max-width: 767px) {
+    padding: 0px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -32,6 +44,7 @@ export const Title = styled.h1`
 export const Fill = styled.span`
   background: ${theme.colors.fill};
   font-style: italic;
+  border-radius: 8px;
 `;
 
 export const Text = styled.p`
@@ -42,11 +55,11 @@ export const Text = styled.p`
 `;
 
 export const Button = styled(Link)`
-  width: 267px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 16px;
+  width: 267px;
   background-color: ${theme.colors.accent};
   border-radius: 12px;
   font-size: 18px;
@@ -62,10 +75,16 @@ export const Button = styled(Link)`
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: ${theme.spacing(50)};
   border: 1.5px dashed ${theme.colors.accent};
+  justify-content: center;
   border-radius: 30px;
-  padding: 40px 123px;
+  padding: 5px;
+  gap: ${theme.spacing(20)};
+  padding: 40px;
+  @media screen and (min-width: 768px) {
+    gap: ${theme.spacing(50)};
+    padding: 40px 123px;
+  }
 `;
 
 export const Item = styled.li`
@@ -88,3 +107,5 @@ export const Span = styled.span`
   letter-spacing: -2%;
   width: 96px;
 `;
+
+export const ImgWrap = styled.div``;

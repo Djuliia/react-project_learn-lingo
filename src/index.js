@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { theme } from 'theme';
 import { persistor, store } from './redux/store';
+import { Toaster } from 'react-hot-toast';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter basename="/react-project_learn-lingo">
           <ThemeProvider theme={theme}>
             <App />
+            <Toaster />
           </ThemeProvider>
         </BrowserRouter>
       </Provider>

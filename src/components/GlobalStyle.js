@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 
  html {
     box-sizing: border-box;
+     overflow-x: hidden;
   }
 
   *:before,
@@ -15,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     max-width: 100%;
     height: auto;
-  }
+   }
 
   body {
     font-family: 'Roboto', sans-serif;

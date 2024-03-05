@@ -1,19 +1,55 @@
 import { Formik } from 'formik';
-import { useQueryParams } from 'hooks/useQueryParams';
-import { Label, StyledField, StyledForm } from './Filter.styled';
+
+import { BtnReset, Label, StyledField, StyledForm } from './Filter.styled';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../../redux/filterSlice';
 
 export const Filter = () => {
-  const { language, changeLanguage, level, changeLevel, price, changePrice } =
-    useQueryParams();
+  const dispatch = useDispatch();
+  const initialValues = {
+    language: 'all',
+    level: 'all',
+    price: 'all',
+  };
+
+  const [filterValues, setFilterValues] = useState(initialValues);
+
+  useEffect(() => {
+    dispatch(setFilter(filterValues));
+  }, [filterValues, dispatch]);
+
+  const handleLanguageChange = e => {
+    setFilterValues(prevValues => ({
+      ...prevValues,
+      language: e.target.value,
+    }));
+  };
+
+  const handleLevelChange = e => {
+    setFilterValues(prevValues => ({
+      ...prevValues,
+      level: e.target.value,
+    }));
+  };
+
+  const handlePriceChange = e => {
+    setFilterValues(prevValues => ({
+      ...prevValues,
+      price: e.target.value,
+    }));
+  };
+
+  const handleReset = () => {
+    setFilterValues({
+      language: 'all',
+      level: 'all',
+      price: 'all',
+    });
+  };
 
   return (
-    <Formik
-      initialValues={{
-        language,
-        level,
-        price,
-      }}
-    >
+    <Formik initialValues={filterValues}>
       {() => (
         <StyledForm>
           <Label>
@@ -22,16 +58,17 @@ export const Filter = () => {
               className="language"
               name="language"
               as="select"
-              value={language}
-              onChange={e => changeLanguage(e.target.value)}
+              onChange={handleLanguageChange}
+              value={filterValues.language}
             >
               <option value="all">All</option>
-              <option value="english">English</option>
-              <option value="spanish">Spanish</option>
-              <option value="french">French</option>
-              <option value="german">German</option>
-              <option value="italian">Italian</option>
-              <option value="korean">Korean</option>
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Italian">Italian</option>
+              <option value="Mandarin Chinese">Chinese</option>
+              <option value="Vietnamese">Vietnamese</option>
             </StyledField>
           </Label>
           <Label>
@@ -40,16 +77,18 @@ export const Filter = () => {
               className="level"
               name="level"
               as="select"
-              value={level}
-              onChange={e => changeLevel(e.target.value)}
+              onChange={handleLevelChange}
+              value={filterValues.level}
             >
               <option value="all">All</option>
-              <option value="beginner">A1 Beginner</option>
-              <option value="elementary">A2 Elementary</option>
-              <option value="intermediate">B1 Intermediate</option>
-              <option value="upper-intermediate">B2 Upper-Intermediate</option>
-              <option value="advanced">C1 Advanced</option>
-              <option value="proficient">C2 Proficient</option>
+              <option value="A1 Beginner">A1 Beginner</option>
+              <option value="A2 Elementary">A2 Elementary</option>
+              <option value="B1 Intermediate">B1 Intermediate</option>
+              <option value="B2 Upper-Intermediate">
+                B2 Upper-Intermediate
+              </option>
+              <option value="C1 Advanced">C1 Advanced</option>
+              <option value="C2 Proficient">C2 Proficient</option>
             </StyledField>
           </Label>
           <Label>
@@ -58,8 +97,8 @@ export const Filter = () => {
               className="price"
               name="price"
               as="select"
-              value={price}
-              onChange={e => changePrice(e.target.value)}
+              onChange={handlePriceChange}
+              value={filterValues.price}
             >
               <option value="all">All</option>
               <option value="25">25$</option>
@@ -70,6 +109,9 @@ export const Filter = () => {
               <option value="28">28$</option>
             </StyledField>
           </Label>
+          <BtnReset type="button" onClick={handleReset}>
+            Reset
+          </BtnReset>
         </StyledForm>
       )}
     </Formik>

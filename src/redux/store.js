@@ -12,6 +12,7 @@ import storage from 'redux-persist/lib/storage';
 import { teachersReducer } from './teachersSlice';
 import { favoriteReducer } from './favoritesSlice';
 import { filterReducer } from './filterSlice';
+import { authReducer } from './authSlice';
 
 const persistConfig = {
   key: 'root',
@@ -30,7 +31,7 @@ const ignoredPersistenceActions = [
 export const store = configureStore({
   reducer: {
     teachers: teachersReducer,
-    // auth,
+    auth: authReducer,
     filter: filterReducer,
     favorites: persistReducer(persistConfig, favoriteReducer),
   },

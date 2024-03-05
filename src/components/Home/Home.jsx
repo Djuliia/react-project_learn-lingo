@@ -11,6 +11,7 @@ import {
   Item,
   Number,
   Span,
+  ImgWrap,
 } from './Home.styled';
 
 export const Home = () => {
@@ -28,7 +29,9 @@ export const Home = () => {
           </Text>
           <Button to="/teachers">Get started</Button>
         </BoxWrapper>
-        <img src={image} alt="teacher" />
+        <ImgWrap>
+          <img src={image} alt="teacher" />
+        </ImgWrap>
       </Wrapper>
       <List>
         <Item>

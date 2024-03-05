@@ -15,18 +15,19 @@ import {
   Title,
   Wrapper,
 } from './Form.styled';
+import toast from 'react-hot-toast';
 
 export const SigninForm = ({ closeModal }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = ({ email, password }, { resetForm }) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then(user => {
-        console.log(user);
+      .then(() => {
+        toast.success(`You are logged in!`);
         resetForm();
         closeModal();
       })
-      .catch(e => console.log(e));
+      .catch(e => toast.error(`Something went wrong1`));
   };
 
   const handleTogglePassword = () => {
@@ -70,7 +71,11 @@ export const SigninForm = ({ closeModal }) => {
               />
               <EyeBtn type="button" onClick={() => handleTogglePassword()}>
                 <svg width="20" height="20">
-                  {showPassword ? null : <use href={`${sprite}#eye-off`} />}
+                  {showPassword ? (
+                    <use href={`${sprite}#eye`} />
+                  ) : (
+                    <use href={`${sprite}#eye-off`} />
+                  )}
                 </svg>
               </EyeBtn>
             </Label>

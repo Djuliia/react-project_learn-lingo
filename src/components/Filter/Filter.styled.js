@@ -5,7 +5,9 @@ import chevron from '../../images/chevron-down.svg';
 
 export const StyledForm = styled(Form)`
   display: flex;
+  flex-wrap: wrap;
   gap: ${theme.spacing(10)};
+  margin-bottom: ${theme.spacing(16)};
 `;
 
 export const Label = styled.label`
@@ -35,7 +37,7 @@ export const StyledField = styled(Field)`
     width: 221px;
   }
   &.level {
-    width: 198px;
+    width: 246px;
   }
   &.price {
     width: 124px;
@@ -43,5 +45,25 @@ export const StyledField = styled(Field)`
 
   option {
     color: ${theme.colors.secondaryText};
+  }
+`;
+
+export const BtnReset = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 16px 28px;
+  color: ${theme.colors.primary};
+  background: transparent;
+  border: 2px solid rgba(18, 20, 23, 0.2);
+  border-radius: 12px;
+  height: 28px;
+  margin-top: 34px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.11;
+  transition: border ${theme.transition}, color ${theme.transition};
+  &:hover {
+    border: 2px solid ${theme.colors.accent};
+    color: ${theme.colors.accent};
   }
 `;

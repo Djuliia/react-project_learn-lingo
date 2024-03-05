@@ -3,10 +3,12 @@ import { theme } from 'theme';
 
 export const CardWrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: ${theme.spacing(24)};
   padding: ${theme.spacing(12)};
   border-radius: 24px;
-  width: 1184px;
+  max-width: 1184px;
   margin-bottom: ${theme.spacing(16)};
 `;
 
@@ -29,7 +31,8 @@ export const Avatar = styled.img`
 
 export const CardHeading = styled.div`
   display: flex;
-  gap: 160px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   p {
     display: inline-flex;
@@ -40,6 +43,7 @@ export const CardHeading = styled.div`
 
 export const HeadingList = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: ${theme.spacing(8)};
   justify-content: center;
   align-items: center;
@@ -121,15 +125,19 @@ export const BtnMore = styled.button`
 export const BageList = styled.ul`
   display: flex;
   gap: ${theme.spacing(4)};
+  flex-wrap: wrap;
 `;
 
 export const BageItem = styled.li`
   padding: 8px 12px;
   border-radius: 35px;
-  border: 1px solid rgba(18, 20, 23, 0.2);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+  background-color: ${({ $active, theme }) =>
+    $active ? theme.colors.accent : 'white'};
+  border: ${({ $active }) =>
+    $active ? 'none' : '1px solid rgba(18, 20, 23, 0.2)'};
 `;
 
 export const ReviewerList = styled.ul`
@@ -167,7 +175,7 @@ export const BtnBook = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 48px 16px 48px;
+  padding: 16px 48px;
   margin-top: ${theme.spacing(16)};
   background-color: ${theme.colors.accent};
   border: none;
