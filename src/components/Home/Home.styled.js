@@ -1,5 +1,5 @@
 import { theme } from 'theme';
-import { Link } from 'react-router-dom/dist';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Section = styled.section`

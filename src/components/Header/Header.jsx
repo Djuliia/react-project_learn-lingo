@@ -1,5 +1,5 @@
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from 'components/firebase';
+import { auth } from '../../firebase';
 import { useEffect, useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import {
@@ -40,7 +40,6 @@ export const Header = () => {
       user
         ? dispatch(setAuthenticated(user.email))
         : dispatch(clearAuthenticated());
-      console.log(user);
     });
     return () => listen();
   }, [dispatch]);

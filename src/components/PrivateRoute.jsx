@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { auth } from '../components/firebase';
+import { auth } from '../firebase';
 
 export const PrivateRoute = ({ children }) => {
   return !auth ? <Navigate to="/" /> : children;

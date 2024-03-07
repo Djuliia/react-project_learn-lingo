@@ -27,5 +27,4 @@ const teachersSlice = createSlice({
 });
 
 export const { setData, setLoading, setError } = teachersSlice.actions;
-
 export const teachersReducer = teachersSlice.reducer;

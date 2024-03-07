@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from 'components/firebase';
+import { auth } from '../../firebase';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import sprite from '../../images/sprite.svg';

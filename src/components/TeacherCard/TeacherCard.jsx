@@ -21,6 +21,7 @@ import {
   ReviewerAvatar,
   ReviewerInfo,
   ReviewerList,
+  RightWrap,
   SpanSpace,
   Underline,
 } from './TeacherCard.styled';
@@ -93,7 +94,18 @@ export const TeacherCard = ({ card }) => {
         </AvatarStatus>
         <Avatar src={avatar_url} alt="avatar" />
       </AvatarWrap>
-      <div>
+      <RightWrap>
+        <BtnHeart onClick={handleToggleFavorite}>
+          {isFavorite ? (
+            <svg width={26} height={26}>
+              <use href={`${sprite}#fullheart`} />
+            </svg>
+          ) : (
+            <svg width={26} height={26}>
+              <use href={`${sprite}#heart`} />
+            </svg>
+          )}
+        </BtnHeart>
         <CardHeading>
           <LangSpan>Languages</LangSpan>
           <HeadingList>
@@ -111,17 +123,6 @@ export const TeacherCard = ({ card }) => {
             <p>
               Price / 1 hour:&nbsp; <AccentText>{price_per_hour}</AccentText>
             </p>
-            <BtnHeart onClick={handleToggleFavorite}>
-              {isFavorite ? (
-                <svg width={26} height={26}>
-                  <use href={`${sprite}#fullheart`} />
-                </svg>
-              ) : (
-                <svg width={26} height={26}>
-                  <use href={`${sprite}#heart`} />
-                </svg>
-              )}
-            </BtnHeart>
           </HeadingList>
         </CardHeading>
         <MainBlock>
@@ -206,7 +207,7 @@ export const TeacherCard = ({ card }) => {
             </div>
           )}
         </MainBlock>
-      </div>
+      </RightWrap>
     </CardWrap>
   );
 };

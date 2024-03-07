@@ -167,11 +167,9 @@ export const BurgerMenu = styled.div`
 
   @media screen and (min-width: 768px) {
     display: none;
-    /* display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; */
   }
 `;
 export const BurgerMenuList = styled.ul`
   display: flex;
-  /* align-items: center; */
   gap: ${theme.spacing(14)};
 `;

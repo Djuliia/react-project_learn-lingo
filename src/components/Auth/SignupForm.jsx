@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from 'components/firebase';
+import { auth } from '../../firebase';
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';

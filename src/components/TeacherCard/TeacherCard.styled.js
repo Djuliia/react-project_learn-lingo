@@ -10,6 +10,18 @@ export const CardWrap = styled.div`
   border-radius: 24px;
   max-width: 1184px;
   margin-bottom: ${theme.spacing(16)};
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
+`;
+
+export const RightWrap = styled.div`
+  position: relative;
+
+  @media screen and (min-width: 1040px) {
+    width: 968px;
+  }
 `;
 
 export const AvatarWrap = styled.div`
@@ -31,8 +43,8 @@ export const Avatar = styled.img`
 
 export const CardHeading = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   p {
     display: inline-flex;
@@ -44,9 +56,10 @@ export const CardHeading = styled.div`
 export const HeadingList = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: ${theme.spacing(8)};
-  justify-content: center;
   align-items: center;
+  margin-right: 64px;
 `;
 
 export const LangSpan = styled.span`
@@ -57,11 +70,10 @@ export const LangSpan = styled.span`
 `;
 
 export const BtnHeart = styled.button`
-  margin-left: ${theme.spacing(32)};
+  position: absolute;
+  right: 10px;
   background-color: transparent;
   border: none;
-  width: 26px;
-  height: 26px;
 
   svg {
     transition: stroke ${theme.transition};

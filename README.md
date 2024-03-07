@@ -1,112 +1,71 @@
-# React homework template
+# LearnLingo Description
 
-Цей проект був створений за допомогою
-[Create React App](https://github.com/facebook/create-react-app). Для знайомства
-і налаштування додаткових можливостей
-[звернися до документації](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is an application for a company that offers online language
+tutoring services. The application consists of three pages: "Home", "Teachers",
+and "Favorites".
 
-## Створення репозиторію за шаблоном
+## Key Features
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення репозиторію
-свого проєкта. Для цього натисни на кнопку `«Use this template»` і вибери опцію
-`«Create a new repository»`, як показано на зображенні.
+1. **Authentication**: Users can register or log in to the system. Authenticated
+   users have access to additional features, such as adding teachers to
+   favorites.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+2. **Viewing Teachers**: On the "Teachers" page, users can view a list of
+   teachers, filter them by language of instruction, level of student knowledge,
+   and price per hour.
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни поле
-його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`«Create repository from template»`.
+3. **Adding to Favorites**: Users can add a teacher to their favorites list.
+   Added teachers will be available on the "Favorites" page.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+4. **Detailed Information and Reviews**: Users can view more detailed
+   information about a teacher, as well as reviews from their students, by
+   clicking on the "Read more" button.
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як
-показано на зображенні.
+5. **Booking Trial Lesson**: Users can book a trial lesson with a teacher by
+   clicking on the "Book trial lesson" button.
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+## Technical Details
 
-Проскроливши сторінку до самого кінця, у секції `«Workflow permissions»` вибери
-опцію `«Read and write permissions»` і постав галочку в чекбоксі. Це
-необхідно для автоматизації процесу деплою проєкту.
+- The layout is responsive and semantic, supporting widths from 320px to 1440px.
+- All authentication and data handling logic is implemented using Firebase.
+- Form validation for registration/authentication and lesson booking is done
+  using Formik and Yup.
+- React Router is used for routing.
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+## Technologies
 
-Тепер у тебе є особистий репозиторій проекту, зі структурою файлів і папок
-репозиторію-шаблону. Далі працюй із ним як із будь-яким іншим особистим репозиторієм,
-клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй їх на
-GitHub.
+- JavaScript
+- React.js
+- Firebase
+- Formik
+- Yup
+- React Router
 
-## Підготовка до роботи
+## Technical Specification
 
-1. Переконайся що на комп'ютері встановлено LTS-версія Node.js.
-   [Завантаж і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встанови базові залежності проєкту командою `npm install`.
-3. Запусти режим розробки, виконавши команду `npm start`.
-4. Перейди в браузері за адресою [http://localhost:3000](http://localhost:3000).
-   Ця сторінка буде автоматично перезавантажуватися після збереження змін у файлах проєкту.
+[Link to Technical Specification](https://docs.google.com/document/d/1ZB_MFgnnJj7t7OXtv5hESSwY6xRgVoACZKzgZczWc3Y/edit)
 
-## Деплой
+## Design Mockup
 
-Продакшн версія проєкту буде автоматично проходити лінтинг, збиратися і
-деплоїтися на GitHub Pages, у гілку `gh-pages`, щоразу, коли оновлюється
-гілка `main`. Наприклад, після прямого пушу або прийнятого пул-реквесту. Для цього
-необхідно у файлі `package.json` відредагувати поле `homepage`, замінивши
-`your_username` і `your_repo_name` на свої, і відправити зміни на GitHub.
+[Link to Design Mockup](<https://www.figma.com/file/cJNErWe5IDwWzF3jH96cdT/Learn-Lingo-(Copy)?type=design&node-id=6-356&mode=design&t=lqWT8K5jcPCzlf4h-0>)
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+## Deployment
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн-версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
+The project is deployed on GitHub Pages at
+[this link](https://djuliia.github.io/react-project_learn-lingo/).
 
-![GitHub Pages settings](./assets/repo-settings.png)
+# Getting Started
 
-### Статус деплоя
+To get started with the project, follow these steps:
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
+1. Clone the repository: git clone
+   https://github.com/Djuliia/react-project_learn-lingo
+2. Install the dependencies: npm install
+3. Start the development server: npm start Now you can begin working on the
+   project and explore its features.
 
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час лінтингу, сборки або деплою сталася помилка.
+---
 
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і
-у вікні, що випадає, перейти за посиланням `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися
-за адресою, вказаною у відредагованій властивості `homepage`. Наприклад, ось
-посилання на живу версію для цього репозиторію
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Якщо відкривається порожня сторінка, переконайся, що у вкладці `Console` немає помилок
-пов'язаних із неправильними шляхами до CSS і JS файлів проєкту (**404**). Швидше 
-за все у тебе неправильне значення властивості `homepage` у файлі `package.json`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши у пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Як це працює
-
-![How it works](./assets/how-it-works.png)
-
-1. Після кожного пушу в гілку `main` GitHub-репозиторія, запускається спеціальний
-   скрипт (GitHub Action) з файла `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проект ініціалізується і
-   проходить лінтинг і збірку перед деплоєм.
-3. Якщо всі кроки пройшли успішно, зібрана продакшн-версія файлів проєкту
-   відправляється в гілку `gh-pages`. В іншому випадку, в лозі виконання
-   скрипта буде вказано в чому проблема.
+Please note that proper functioning of the application may require
+authentication with Firebase. Make sure you have correctly set up environments
+and environment variables according to the instructions in the README file.

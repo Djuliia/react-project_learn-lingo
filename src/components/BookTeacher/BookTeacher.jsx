@@ -1,5 +1,4 @@
 import React from 'react';
-// import teacherAvatar from '../../images/jane.png';
 import { BookTeacherForm } from 'components/BookTeacherForm/BookTeacherForm';
 import { AvatarWrap, Name, Span, Title, Wrapper } from './BookTeacher.styled';
 import { ReviewerAvatar } from 'components/TeacherCard/TeacherCard.styled';
