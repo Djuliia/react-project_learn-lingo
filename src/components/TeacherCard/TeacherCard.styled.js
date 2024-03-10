@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { theme } from 'theme';
 
 export const CardWrap = styled.div`
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: ${theme.spacing(24)};
@@ -19,7 +18,7 @@ export const CardWrap = styled.div`
 export const RightWrap = styled.div`
   position: relative;
 
-  @media screen and (min-width: 1040px) {
+  @media screen and (min-width: 1240px) {
     width: 968px;
   }
 `;

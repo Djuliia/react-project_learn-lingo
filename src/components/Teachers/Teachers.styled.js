@@ -3,6 +3,9 @@ import { theme } from 'theme';
 
 export const Section = styled.section`
   margin-top: ${theme.spacing(16)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const BtnMore = styled.button`

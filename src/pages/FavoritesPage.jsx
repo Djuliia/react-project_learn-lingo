@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux';
 import { selectFavorites } from '../redux/selectors';
 import sprite from '../images/sprite.svg';
 import { Button } from 'components/Home/Home.styled';
-import { Container, Wrapper } from 'components/Favorites/Favorites.styled';
+import { Wrapper } from 'components/Favorites/Favorites.styled';
+import { Section } from 'components/Teachers/Teachers.styled';
 
 const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
 
   return (
-    <Container>
+    <Section>
       {favorites.length > 0 ? (
         <Favorites />
       ) : (
@@ -22,7 +23,7 @@ const FavoritesPage = () => {
           <Button to="/teachers">Start exploring</Button>
         </Wrapper>
       )}
-    </Container>
+    </Section>
   );
 };
 

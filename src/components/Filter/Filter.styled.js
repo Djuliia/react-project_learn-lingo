@@ -6,7 +6,6 @@ import chevron from '../../images/chevron-down.svg';
 export const StyledForm = styled(Form)`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: ${theme.spacing(10)};
   margin-bottom: ${theme.spacing(16)};
 `;
