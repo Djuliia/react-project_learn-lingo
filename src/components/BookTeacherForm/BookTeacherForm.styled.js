@@ -19,6 +19,7 @@ export const RadioWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing(9)};
+  margin-bottom: ${theme.spacing(8)};
 `;
 
 export const RadioBox = styled.div`

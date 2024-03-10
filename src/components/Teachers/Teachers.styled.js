@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { theme } from 'theme';
 
-export const Section = styled.section``;
+export const Section = styled.section`
+  margin-top: ${theme.spacing(16)};
+`;
 
 export const BtnMore = styled.button`
   margin: 0 auto;

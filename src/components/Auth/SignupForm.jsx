@@ -19,8 +19,8 @@ import toast from 'react-hot-toast';
 export const SignupForm = ({ closeModal }) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = ({ name, email, password }, { resetForm }) => {
-    createUserWithEmailAndPassword(auth, name, email, password)
+  const handleSubmit = ({ email, password }, { resetForm }) => {
+    createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         toast.success('You are registered!');
         resetForm();

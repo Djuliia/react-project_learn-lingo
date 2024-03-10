@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { theme } from 'theme';
 
 export const CardWrap = styled.div`
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: ${theme.spacing(24)};
   padding: ${theme.spacing(12)};
   border-radius: 24px;

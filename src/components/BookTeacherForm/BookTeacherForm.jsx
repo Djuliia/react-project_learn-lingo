@@ -1,4 +1,4 @@
-import { Formik, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
   Button,
@@ -77,7 +77,7 @@ export const BookTeacherForm = () => {
               <label htmlFor="culture">Culture, travel or hobby</label>
             </RadioBox>
           </RadioWrap>
-          <ErrorMessage name="reason" component="div" />
+          <ErrorMsg name="reason" component="div" />
         </Wrapper>
         <FieldWrap>
           <StyledField type="text" name="name" placeholder="Full Name" />
