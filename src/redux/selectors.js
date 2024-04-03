@@ -21,7 +21,7 @@ export const selectFilteredTeachers = createSelector(
 
     return teachers.filter(teacher => {
       const languageMatches =
-        language.includes('all') || language.includes(teacher.languages);
+        language.includes('all') || teacher.languages.includes(language);
       const levelMatches =
         level === 'all' || teacher.levels.some(l => l.includes(level));
       const priceMatches =
